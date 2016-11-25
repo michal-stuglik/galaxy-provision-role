@@ -1,0 +1,36 @@
+---
+
+  - name: System sources update
+    raw: apt-get -y update
+    when: ansible_os_family == "Debian"
+
+#  - name: Install requirments CentOS
+#    yum: pkg={{ item }} state=installed
+#    when: ansible_distribution == 'CentOS'
+#    with_items: "{{ system_packages_centos }}"
+#
+#  - name: Install python2.7 CentOS
+#    yum: pkg={{ item }} state=installed
+#    when: ansible_distribution == 'CentOS'
+#    with_items: "{{ python_packages_system_centos6 }}"
+
+  - name: Install required system packages
+    apt: pkg={{ item }} state=installed update-cache=yes
+    when: ansible_os_family == "Debian"
+    with_items: "{{ system_packages }}"
+
+  - name: Install required python packages
+    apt: pkg={{ item }} state=installed update-cache=yes
+    when: ansible_os_family == "Debian"
+    with_items: "{{ python_packages_system }}"
+
+  - name: Install required supervisor packages
+    apt: pkg={{ item }} state=installed update-cache=yes
+    when: production and ansible_os_family == "Debian"
+    with_items: "{{ supervisor_packages }}"
+
+  - name: Enable supervisor to startup with system
+    raw: systemctl enable supervisor
+    when: production
+
+

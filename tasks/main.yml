@@ -6,12 +6,12 @@
 
 #  - name: Install requirments CentOS
 #    yum: pkg={{ item }} state=installed
-#    when: ansible_distribution == 'CentOS'
-#    with_items: "{{ system_packages_centos }}"
+#    when: ansible_distribution == 'RedHat'
+#    with_items: "{{ system_packages_centos6 }}"
 #
 #  - name: Install python2.7 CentOS
 #    yum: pkg={{ item }} state=installed
-#    when: ansible_distribution == 'CentOS'
+#    when: ansible_distribution == 'RedHat'
 #    with_items: "{{ python_packages_system_centos6 }}"
 
   - name: Install required system packages

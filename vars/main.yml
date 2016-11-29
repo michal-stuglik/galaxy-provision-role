@@ -1,5 +1,5 @@
 ---
-# mandatory, system (debian-familiy) programs
+# mandatory, system (debian-family) programs
 system_packages:
   - build-essential
   - git
@@ -42,17 +42,17 @@ python_packages_system:
 supervisor_packages:
   - supervisor
 
-#system_packages_centos:
-#  - epel-release
-#  - centos-release-scl
-#  - gcc
-#  - gcc-c++
-#  - git
+system_packages_centos6:
+  - epel-release
+  - centos-release-scl
+  - gcc
+  - gcc-c++
+  - git
 
-#python_packages_system_centos6:
-#  - python27
-#  - python27-dev
-#  - python27-pip
-#  - python27-setuptools
-#  - python27-virtualenv
-#  - python27-simplejson
+python_packages_system_centos6:
+  - python27
+  - python27-dev
+  - python27-pip
+  - python27-setuptools
+  - python27-virtualenv
+  - python27-simplejson

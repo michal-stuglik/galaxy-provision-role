@@ -57,3 +57,9 @@ python_packages_system_centos6:
   - python27-setuptools
   - python27-virtualenv
   - python27-simplejson
+
+# ubuntu based tools
+system_bioinformatics_packages:
+  - samtools
+  - bamtools
+  - python-pysam

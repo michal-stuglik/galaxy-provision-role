@@ -1,3 +1,7 @@
 ---
 
+# advanced setup
 production: false
+
+# install bioinformatics tools as system packages
+install_bioinformatics_tools: false

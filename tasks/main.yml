@@ -24,6 +24,11 @@
     when: ansible_os_family == "Debian"
     with_items: "{{ python_packages_system }}"
 
+  - name: Install bioinformatics packages
+    apt: pkg={{ item }} state=installed update-cache=yes
+    when: install_bioinformatics_tools and ansible_os_family == "Debian"
+    with_items: "{{ system_bioinformatics_packages }}"
+
   - name: Install required supervisor packages
     apt: pkg={{ item }} state=installed update-cache=yes
     when: production and ansible_os_family == "Debian"

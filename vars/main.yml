@@ -63,4 +63,4 @@ system_bioinformatics_packages:
   - bcftools
   - samtools
   - bamtools
-  - python-pysam
+#  - python-pysam

@@ -60,6 +60,7 @@ python_packages_system_centos6:
 
 # ubuntu based tools
 system_bioinformatics_packages:
+  - bcftools
   - samtools
   - bamtools
   - python-pysam
